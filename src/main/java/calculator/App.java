@@ -47,8 +47,11 @@ public class App {
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             /* 위 요구사항에 맞게 구현 */
+            /* 문제 요구사항에 맞게 toString 에서 foreach문으로 변경*/
             if (sc.nextLine().equals("inquiry")) {
-                System.out.println(cal.result.toString());
+                for (int i : cal.result) {
+                    System.out.println(i);
+                }
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
