@@ -51,10 +51,13 @@ public class App {
             /* 연산의 결과를 배열에 저장합니다. */
             intList.add(result);
             /* index를 증가 시킵니다. */
-            if (count == 9) {
+            count++;
+
+            /* 배열에서 컬렉션으로 변경됨으로써 변경해야하는 부분 구현 */
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            /* 위 요구사항에 맞게 구현 */
+            if (sc.nextLine().equals("remove")) {
                 intList.remove(0);
-            } else {
-                count++;
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
