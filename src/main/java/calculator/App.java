@@ -60,6 +60,12 @@ public class App {
                 intList.remove(0);
             }
 
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            /* 위 요구사항에 맞게 구현 */
+            if (sc.nextLine().equals("inquiry")) {
+                System.out.println(intList.toString());
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             /* exit을 입력 받으면 반복 종료 */
             str = sc.nextLine();
