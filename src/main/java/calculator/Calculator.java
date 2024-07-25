@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    ArrayList<Integer> result = new ArrayList<Integer>();
+    /* 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정*/
+    private ArrayList<Integer> result = new ArrayList<Integer>();
 
 
     public int calculate(int num1, int num2, char cha, int count) {
@@ -33,5 +34,15 @@ public class Calculator {
         }
         /* return 연산 결과 */
         return result.get(count);
+    }
+
+    /* Getter 메서드 구현 */
+    public ArrayList<Integer> getResult() {
+        return result;
+    }
+
+    /* Setter 메서드 구현 */
+    public void setResultRemove(int num1) {
+        result.remove(num1);
     }
 }
