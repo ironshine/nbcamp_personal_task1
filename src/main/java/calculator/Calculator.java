@@ -50,4 +50,8 @@ public class Calculator {
         /* 구현 */
         result.remove(0);
     }
+    public void inquiryResults() {
+        /* 구현 */
+        result.toString();
+    }
 }

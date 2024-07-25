@@ -49,9 +49,7 @@ public class App {
             /* 위 요구사항에 맞게 구현 */
             /* 문제 요구사항에 맞게 toString 에서 foreach문으로 변경*/
             if (sc.nextLine().equals("inquiry")) {
-                for (int i : cal.getResult()) {
-                    System.out.println(i);
-                }
+                cal.inquiryResults();
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
