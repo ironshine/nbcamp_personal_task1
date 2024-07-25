@@ -7,13 +7,19 @@ public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정*/
     /* 연산 결과를 저장하는 컬렉션 타입 필드가 생성자를 통해 초기화 되도록 변경 */
 
+    /* static, final 활용 */
+    /* 원의 넓이 결과를 저장하는 컬렉션 타입의 필드 선언 및 생성 */
+    /* 생성자 수정 */
+
     private ArrayList<Integer> result;
+    private ArrayList<Integer> circle;
+    static final double pi = 3.141592;
 
     /* 생성자 구현 */
     public Calculator() {
         result = new ArrayList<Integer>();
+        circle = new ArrayList<Integer>();
     }
-
 
     public int calculate(int num1, int num2, char cha, int count) {
         /* 위 요구사항에 맞게 구현 */
@@ -60,5 +66,24 @@ public class Calculator {
     public void inquiryResults() {
         /* 구현 */
         System.out.println(result.toString());
+    }
+
+    /* 원의 넓이를 구하는 메서드 선언*/
+    public int calculateCircleArea(int num1,int count) {
+        /* 원의 넓이 계산 구현 */
+        circle.add((int) (num1 * num1 * pi));
+        return circle.get(count);
+    }
+    /* 원의 넓이 저장 필드 Getter, Setter, 조회 메서드 구현 */
+    public ArrayList<Integer> getCircle() {
+        return circle;
+    }
+
+    public void setCircle(ArrayList<Integer> circle) {
+        this.circle = circle;
+    }
+    public void inquiryCircle() {
+        /* 구현 */
+        System.out.println(circle.toString());
     }
 }

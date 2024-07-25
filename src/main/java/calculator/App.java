@@ -14,11 +14,39 @@ public class App {
 
         /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
         int count = 0;
+        int circleCount = 0;
 
         /* 반복문 사용 해서 연산을 반복 */
         /* 반복문 시작 */
         String str = "";
         while (!str.equals("exit")) {
+            /* 사칙연산을 진행할지 원의 너비를 구할지 선택 구현 */
+            System.out.println("원의 넓이를 구하시겠습니까? (원의넓이 입력 시 진행)");
+            /* 원의 넓이를 구하는 경우 반지름을 입력받아 원의 넓이를 구한 후 출력*/
+            if (sc.nextLine().equals("원의넓이")) {
+                System.out.print("반지름을 입력하세요: ");
+                int num1 = sc.nextInt();
+
+                /* 원의 넓이 저장 */
+                cal.calculateCircleArea(num1, circleCount);
+
+                /* 원의 넓이 출력 */
+                System.out.println("결과: " + cal.getCircle().get(circleCount));
+
+                /* 저장된 원의 넓이 값들 바로 전체 조회 */
+                System.out.println("저장된 원의넓이를 조회하시겠습니까? (inquiry 입력 시 조회)");
+                if (sc.nextLine().equals("inquiry")) {
+                    cal.inquiryCircle();
+                }
+
+                System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+                /* exit을 입력 받으면 반복 종료 */
+                str = sc.nextLine();
+
+                /* index 증가 */
+                circleCount++;
+                continue;
+            }
             System.out.print("첫 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
             int num1 = sc.nextInt();
