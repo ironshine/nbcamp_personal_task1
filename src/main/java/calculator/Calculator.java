@@ -42,7 +42,12 @@ public class Calculator {
     }
 
     /* Setter 메서드 구현 */
-    public void setResultRemove(int num1) {
-        result.remove(num1);
+    public void setResult(ArrayList<Integer> result) {
+        this.result = result;
+    }
+
+    public void removeResult() {
+        /* 구현 */
+        result.remove(0);
     }
 }
