@@ -1,11 +1,18 @@
 package calculator;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
     /* 연산 결과를 저장하는 컬렉션 타입 필드를 외부에서 직접 접근 하지 못하도록 수정*/
-    private ArrayList<Integer> result = new ArrayList<Integer>();
+    /* 연산 결과를 저장하는 컬렉션 타입 필드가 생성자를 통해 초기화 되도록 변경 */
+
+    private ArrayList<Integer> result;
+
+    /* 생성자 구현 */
+    public Calculator() {
+        result = new ArrayList<Integer>();
+    }
 
 
     public int calculate(int num1, int num2, char cha, int count) {
@@ -52,6 +59,6 @@ public class Calculator {
     }
     public void inquiryResults() {
         /* 구현 */
-        result.toString();
+        System.out.println(result.toString());
     }
 }
