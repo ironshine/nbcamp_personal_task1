@@ -1,7 +1,13 @@
 package calculator;
 public class ArithmeticCalculator extends Calculator{
+    AddOperator addOper = new AddOperator();
+    SubtractOperator subOper = new SubtractOperator();
+    MultiplyOperator multOper = new MultiplyOperator();
+    DivideOperator diviOper = new DivideOperator();
+
     /* 구현 */
     public int calculate(int num1, int num2, char cha, int count) {
+        /* 수정 */
         /* 위 요구사항에 맞게 구현 */
         if (num2 == 0 && cha == '/') {
             System.out.println("0으로 나눌 수 없습니다.");
@@ -10,16 +16,16 @@ public class ArithmeticCalculator extends Calculator{
         }
         switch (cha) {
             case '+':
-                getResult().add(num1 + num2);
+                getResult().add(addOper.operate(num1,num2));
                 break;
             case '-':
-                getResult().add(num1 - num2);
+                getResult().add(subOper.operate(num1,num2));
                 break;
             case '*':
-                getResult().add(num1 * num2);
+                getResult().add(multOper.operate(num1,num2));
                 break;
             case '/':
-                getResult().add(num1 / num2);
+                getResult().add(diviOper.operate(num1,num2));
                 break;
             default:
                 System.out.println("잘못된 입력입니다.");
