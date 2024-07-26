@@ -4,6 +4,7 @@ public class ArithmeticCalculator extends Calculator{
     SubtractOperator subOper = new SubtractOperator();
     MultiplyOperator multOper = new MultiplyOperator();
     DivideOperator diviOper = new DivideOperator();
+    ModOperator modOper = new ModOperator();
 
     /* 구현 */
     public int calculate(int num1, int num2, char cha, int count) {
@@ -26,6 +27,9 @@ public class ArithmeticCalculator extends Calculator{
                 break;
             case '/':
                 getResult().add(diviOper.operate(num1,num2));
+                break;
+            case '%':
+                getResult().add(modOper.operate(num1,num2));
                 break;
             default:
                 System.out.println("잘못된 입력입니다.");
