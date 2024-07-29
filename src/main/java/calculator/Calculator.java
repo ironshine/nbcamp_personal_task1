@@ -3,11 +3,9 @@ package calculator;
 import java.util.*;
 
 public class Calculator {
-    /* 수정 */
     private ArrayList<Integer> result;
     private ArrayList<Integer> circle;
-    // pi 값이 변하지 않게 final 사용
-    final double PI = 3.14;
+    static final double PI = 3.14;
 
     /* 생성자 구현 */
     public Calculator() {
