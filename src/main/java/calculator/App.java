@@ -60,9 +60,11 @@ public class App {
             // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
             char cha = sc.nextLine().charAt(0);
 
+            OperatorType operatorType = OperatorType.findOperatorType(cha);
+
             /* 제어문을 활용하여 위 요구사항을 만족할 수 있게 구현합니다.*/
             /* 연산의 결과를 배열에 저장합니다. */
-            System.out.println("결과: " + ariCal.calculate(num1,num2,cha,count));
+            System.out.println("결과: " + ariCal.calculate(num1,num2,operatorType.label(),count));
 
 
             /* index를 증가 시킵니다. */
