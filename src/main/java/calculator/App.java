@@ -10,7 +10,7 @@ public class App {
 
         /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
         /* Calculator 인스턴스 생성 */
-        Calculator cal = new Calculator();
+        Calculator<Double> cal = new Calculator<>();
         CircleCalculator circleCal = new CircleCalculator();
         ArithmeticCalculator ariCal = new ArithmeticCalculator();
 
@@ -50,10 +50,10 @@ public class App {
             }
             System.out.print("첫 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-            int num1 = sc.nextInt();
+            cal.setNum1(sc.nextDouble());
             System.out.print("두 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
-            int num2 = sc.nextInt();
+            cal.setNum2(sc.nextDouble());
             sc.nextLine();
 
             System.out.print("사칙연산 기호를 입력하세요: ");
@@ -64,11 +64,14 @@ public class App {
 
             /* 제어문을 활용하여 위 요구사항을 만족할 수 있게 구현합니다.*/
             /* 연산의 결과를 배열에 저장합니다. */
-            System.out.println("결과: " + ariCal.calculate(num1,num2,operatorType.label(),count));
+            System.out.println("결과: " + ariCal.calculate(cal.getNum1(),cal.getNum2(),operatorType.label(),count));
 
 
             /* index를 증가 시킵니다. */
             count++;
+            for (int i = 0, j = 0; i < 2; i++) {
+
+            }
 
             /* 배열에서 컬렉션으로 변경됨으로써 변경해야하는 부분 구현 */
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");

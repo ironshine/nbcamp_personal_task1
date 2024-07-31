@@ -6,18 +6,15 @@ public class ArithmeticCalculator extends Calculator{
     DivideOperator diviOper = new DivideOperator();
     ModOperator modOper = new ModOperator();
 
-    /* 구현 */
-    public int calculate(int num1, int num2, char cha, int count) {
-        /* 수정 */
-        /* 위 요구사항에 맞게 구현 */
-        if (num2 == 0 && cha == '/') {
+    public <T> Double calculate(T num1, T num2, char cha, int count) {
+        if ((num2 == 0) && (cha == '/')) {
             System.out.println("0으로 나눌 수 없습니다.");
             getResult().add(0);
-            return getResult().get(count);
+            return (Double) getResult().get(count);
         }
         switch (cha) {
             case '+':
-                getResult().add(addOper.operate(num1,num2));
+                getResult().add(addOper.operate(super.getNum1(),num2));
                 break;
             case '-':
                 getResult().add(subOper.operate(num1,num2));
@@ -36,7 +33,7 @@ public class ArithmeticCalculator extends Calculator{
                 break;
         }
         /* return 연산 결과 */
-        return getResult().get(count);
+        return (Double) getResult().get(count);
     }
 
     public void removeResult() {

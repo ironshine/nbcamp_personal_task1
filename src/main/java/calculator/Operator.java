@@ -1,5 +1,5 @@
 package calculator;
 
-public abstract class Operator {
-    public abstract int operate(int num1, int num2);
+public abstract class Operator<T> {
+    public abstract Double operate(T num1, T num2);
 }
